@@ -4,18 +4,8 @@ nixPkgs = ["python39"]
 [phases.install]
 cmds = ["pip install -r requirements.txt"]
 
+[phases.build]
+cmds = []
+
 [start]
 cmd = "gunicorn app:app --bind 0.0.0.0:$PORT"
-```
-
-4. **Commit**
-
----
-
-## 🎯 **OR EASIEST - Just Add `Procfile` (if not there already):**
-
-Check if `Procfile` exists in your GitHub repo.
-
-If it does, make sure it contains:
-```
-web: gunicorn app:app
